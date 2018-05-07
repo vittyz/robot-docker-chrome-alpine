@@ -1,7 +1,7 @@
 FROM python:2.7.14-alpine3.7
 
-ENV http_proxy http://10.1.1.10:8080
-ENV https_proxy http://10.1.1.10:8080
+ENV http_proxy http://comet44.tac.co.th:8080
+ENV https_proxy http://comet44.tac.co.th:8080
 RUN env
 RUN set | grep proxy
 RUN apk update
@@ -15,10 +15,12 @@ RUN apk add --no-cache \
 
 #RUN apk add font-xfree86-type1
 
-RUN pip install --no-cache-dir \
- robotframework==3.0.2 \
- robotframework-selenium2library==1.8.0 \
- selenium==3.3.1
+RUN pip install --upgrade --no-cache-dir \
+ robotframework \
+ robotframework-selenium2library \
+ robotframework-seleniumlibrary \
+ selenium==3.3.1 \
+ robotframework-httplibrary
 
 # Chrome requires docker to have cap_add: SYS_ADMIN if sandbox is on.
 # Disabling sandbox and gpu as default.
