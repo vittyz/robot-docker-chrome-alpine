@@ -23,7 +23,8 @@ RUN pip install --upgrade --no-cache-dir \
  robotframework-selenium2library==1.8.0 \
  robotframework-seleniumlibrary \
  selenium==3.3.1 \
- robotframework-httplibrary
+ robotframework-httplibrary \
+ pyyaml
 
 # Chrome requires docker to have cap_add: SYS_ADMIN if sandbox is on.
 # Disabling sandbox and gpu as default.
