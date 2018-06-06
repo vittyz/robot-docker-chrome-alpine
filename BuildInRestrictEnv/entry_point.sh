@@ -5,5 +5,5 @@ Xvfb :99 -screen 0 $GEOMETRY &
 export DISPLAY=:99
 
 pybot "$@"
-
+chmod -R 777 /out
 
