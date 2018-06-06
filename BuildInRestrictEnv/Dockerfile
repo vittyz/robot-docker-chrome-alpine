@@ -17,7 +17,7 @@ RUN apk add --no-cache \
 
 RUN pip install --no-cache-dir \
  robotframework==3.0.2 \
- robotframework-selenium2library==1.8.0 \
+ robotframework-selenium2library==3.0.0 \
  selenium==3.3.1
 
 # Chrome requires docker to have cap_add: SYS_ADMIN if sandbox is on.
