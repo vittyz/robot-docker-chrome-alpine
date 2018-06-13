@@ -1,8 +1,8 @@
 FROM python:2.7.14-alpine3.7
 MAINTAINER    vitty
 
-ENV http_proxy http://comet44.tac.co.th:8080
-ENV https_proxy http://comet44.tac.co.th:8080
+ENV http_proxy http://10.1.1.10:8080
+ENV https_proxy http://10.1.1.10:8080
 
 RUN env
 RUN set | grep proxy
