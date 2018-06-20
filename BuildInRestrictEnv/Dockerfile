@@ -24,6 +24,8 @@ RUN pip install --upgrade --no-cache-dir \
  robotframework-seleniumlibrary \
  selenium==3.3.1 \
  robotframework-httplibrary \
+ requests \
+ robotframework-requests \
  pyyaml
 
 # Chrome requires docker to have cap_add: SYS_ADMIN if sandbox is on.
