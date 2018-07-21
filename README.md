@@ -14,6 +14,15 @@ See also <https://github.com/juacompe/docker-robot-framework>
 
     docker run --rm -it -v `pwd`/example:/tests -v `pwd`/robot_result:/out robot-framework-alpine -d /out tests/*.robot
 
+    docker run --rm -t --network=general \
+     --name="robot_occ_$build" \
+     -v "$(pwd)":/tests \
+     -v "$(pwd)/occ_result":/out \
+     -e SCREEN_WIDTH=1920 -e SCREEN_HEIGHT=1080 -e SCREEN_DEPTH=32  \
+      robot-framework-alpine \
+     -V /tests/conf/test.yaml -e success  \
+     -d /out $rerun "tests/test_*.robot" 
+
 # Dockerhub
 
 <https://hub.docker.com/r/juacompe/robot-docker-chrome-alpine/>
