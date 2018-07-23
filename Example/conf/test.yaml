@@ -1,0 +1,4 @@
+SITE_URL: https://dtaconline-test.dtac.co.th
+headless: y
+timeout: 20s
+
