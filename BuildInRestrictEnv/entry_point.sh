@@ -14,7 +14,7 @@ if [ $1 = "rebot" ]
 then
    echo "REBOT"
    "$@"
-   cp *.html /out
+#   cp *.html /out
 else
    pybot "$@"
 fi 
