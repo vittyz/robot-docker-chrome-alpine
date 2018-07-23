@@ -14,11 +14,18 @@ if [ $1 = "rebot" ]
 then
    echo "REBOT"
    "$@"
+   cp *.html /out
 else
    pybot "$@"
 fi 
 
+exitcode=$?
+echo $exitcode > /out/result_status
+
 chmod -R 777 /out
+exit $exitcode
+
+
 
 
 
