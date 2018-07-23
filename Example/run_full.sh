@@ -28,13 +28,15 @@ while  [ $round -lt 5 ]; do
 
   if [ $round != "1" ]
   then
-     rerun="--rerunfailed /out/output1.xml"
+     lastround=$(( $round - 1 ))
+     rerun="--rerunfailed /out/output$lastround.xml"
   fi
 
   echo "Run Round #"$round
   echo $rerun
   echo " "
 
+  
   docker run --rm -t --network=general \
      --name="bot_occ_"$dock"_"$build"_r"$round \
      --shm-size=4g \
@@ -43,7 +45,7 @@ while  [ $round -lt 5 ]; do
      -e SCREEN_WIDTH=1280 -e SCREEN_HEIGHT=720 \
       robot-framework-alpine \
      -V /tests/conf/test.yaml -e success  \
-     -d /out $rerun  --output output$round.xml "tests/"$file
+     -d /out $rerun  --output output$round.xml "/tests/"$file
 
   result=$?
   round=$(( $round + 1 ))

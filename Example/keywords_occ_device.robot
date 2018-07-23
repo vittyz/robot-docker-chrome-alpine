@@ -52,7 +52,7 @@ Choose Smartphones&Tablets
 Input Shipping Address Device
     [Arguments]     ${titlePage}  ${address}    ${subdistrict}    ${district}     ${province}     ${postcode}
     Wait Until Page Contains                ${titlePage}
-    Wait Loading Invisible
+    #Wait Loading Invisible
     Input Text                              street[0]         ${address}
     Select Shipping Subdistrict                  ${subdistrict}    ${district}     ${province}     ${postcode}
 
