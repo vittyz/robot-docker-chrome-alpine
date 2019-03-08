@@ -23,7 +23,8 @@ RUN pip install --no-cache-dir \
  robotframework-httplibrary \
  requests \
  robotframework-requests \
- pyyaml
+ pyyaml \
+ robotframework-jsonvalidator
 
 
 # Chrome requires docker to have cap_add: SYS_ADMIN if sandbox is on.
